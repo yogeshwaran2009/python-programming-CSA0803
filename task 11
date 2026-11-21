@@ -1,0 +1,16 @@
+#task11
+import json
+
+base = float(input("Enter base rate: "))
+fat_step = float(input("Enter fat step: "))
+snf_step = float(input("Enter SNF step: "))
+
+fat = float(input("Enter fat: "))
+snf = float(input("Enter SNF: "))
+
+fs = round((fat - 3.5) / 0.1)
+ss = round((snf - 8.5) / 0.1)
+
+rate = round(base + fs * fat_step + ss * snf_step, 2)
+
+print(f"Rate: Rs {rate:.2f}")

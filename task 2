@@ -1,0 +1,20 @@
+from decimal import Decimal
+
+a = int(input("Enter an integer: "))
+b = float(input("Enter a decimal number: "))
+c = input("Enter a string: ")
+
+print(type(a).__name__)
+print(type(b).__name__)
+print(type(c).__name__)
+
+x = float(input("Enter first decimal: "))
+y = float(input("Enter second decimal: "))
+print(x + y)
+
+n = int(input("How many times to enter the amount? "))
+amount = input("Enter the amount: ")
+extra = input("Enter the extra amount: ")
+
+total = sum([Decimal(amount)] * n) + Decimal(extra)
+print("Exact total:", total)

@@ -1,0 +1,23 @@
+#task6
+BASE_RATE = 30.00
+FAT_STEP_VALUE = 0.48
+SNF_STEP_VALUE = 0.30
+
+def rate_per_litre(fat, snf):
+    """Return milk rate per litre, rounded to two decimals."""
+    fat_steps = round((fat - 3.5) / 0.1)
+    snf_steps = round((snf - 8.5) / 0.1)
+    return round(BASE_RATE + fat_steps * FAT_STEP_VALUE + snf_steps * SNF_STEP_VALUE, 2)
+
+def payment(litres, fat, snf):
+    """Return payment for one milk entry."""
+    return round(litres * rate_per_litre(fat, snf), 2)
+
+litres = float(input("Enter litres: "))
+fat = float(input("Enter fat: "))
+snf = float(input("Enter SNF: "))
+
+amount = payment(litres, fat, snf)
+
+print(f"Rate per litre: Rs {rate_per_litre(fat, snf):.2f}")
+print(f"Total payment: Rs {amount:.2f}")

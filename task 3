@@ -1,0 +1,17 @@
+#TASK3
+BASE_RATE = 30.00
+FAT_STEP_VALUE = 0.48
+SNF_STEP_VALUE = 0.30
+
+RATE_CARD = {"base": BASE_RATE, "fat": FAT_STEP_VALUE, "snf": SNF_STEP_VALUE}
+
+value = int(input("Enter an integer: "))
+value = input("Enter a string: ")
+
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+a, b = b, a
+
+print("RATE_CARD:", RATE_CARD)
+print("value:", value)
+print("a =", a, "b =", b)

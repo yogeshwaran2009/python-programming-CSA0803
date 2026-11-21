@@ -1,0 +1,14 @@
+#TASK5
+try:
+    farmer_id = input("Farmer ID: ")
+    litres = float(input("Litres: "))
+    fat = float(input("Fat %: "))
+    snf = float(input("SNF %: "))
+
+    if litres < 0 or not (2.0 <= fat <= 7.0):
+        print("Invalid data")
+    else:
+        print(f"Farmer {farmer_id}: {litres:.2f} litres, fat {fat:.2f}%, SNF {snf:.2f}%")
+
+except ValueError:
+    print("Invalid input: enter numbers for litres, fat and SNF.")

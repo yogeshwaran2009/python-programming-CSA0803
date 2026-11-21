@@ -1,0 +1,19 @@
+#task7
+BASE_RATE = 30.00
+FAT_STEP_VALUE = 0.48
+SNF_STEP_VALUE = 0.30
+
+def rate_per_litre(fat, snf):
+    fat_steps = round((fat - 3.5) / 0.1)
+    snf_steps = round((snf - 8.5) / 0.1)
+    return round(BASE_RATE + fat_steps * FAT_STEP_VALUE + snf_steps * SNF_STEP_VALUE, 2)
+
+def payout(litres, fat, snf):
+    return round(litres * rate_per_litre(fat, snf), 2)
+
+fat = float(input("Enter fat: "))
+snf = float(input("Enter SNF: "))
+litres = float(input("Enter litres: "))
+
+print(f"Rate: Rs {rate_per_litre(fat, snf):.2f}")
+print(f"Payment: Rs {payout(litres, fat, snf):.2f}")

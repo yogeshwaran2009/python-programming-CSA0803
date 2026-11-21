@@ -1,0 +1,28 @@
+#task10
+def rate(fat, snf):
+    fs = round((fat - 3.5) / 0.1)
+    ss = round((snf - 8.5) / 0.1)
+    return round(30 + fs * 0.48 + ss * 0.30, 2)
+
+cache = {}
+total = 0
+
+n = int(input("Enter number of entries: "))
+
+for i in range(n):
+    litres = float(input("Enter litres: "))
+    fat = float(input("Enter fat: "))
+    snf = float(input("Enter SNF: "))
+
+    key = (fat, snf)
+
+    if key not in cache:
+        cache[key] = rate(fat, snf)
+
+    amount = round(litres * cache[key], 2)
+
+    print(f"{key}: Rate Rs {cache[key]:.2f}, Payment Rs {amount:.2f}")
+
+    total += amount
+
+print(f"Total: Rs {total:.2f}")

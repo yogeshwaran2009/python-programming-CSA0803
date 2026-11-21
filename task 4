@@ -1,0 +1,19 @@
+#TASK4
+import math
+
+fat = float(input("Enter fat: "))
+snf = float(input("Enter SNF: "))
+litres = float(input("Enter litres: "))
+
+fat_steps = round((fat - 3.5) / 0.1)
+snf_steps = round((snf - 8.5) / 0.1)
+
+rate = 30.00 + fat_steps * 0.48 + snf_steps * 0.30
+payment = litres * rate
+
+print("Fat steps:", fat_steps)
+print("SNF steps:", snf_steps)
+print(f"Rate: Rs {rate:.2f}")
+print(f"Payment: Rs {payment:.2f}")
+print("Fat valid:", 2.0 <= fat <= 7.0)
+print("Negative examples:", int(-2.7), math.floor(-2.7), round(-2.7))

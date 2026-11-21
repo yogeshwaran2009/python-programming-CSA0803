@@ -1,0 +1,21 @@
+#task9
+def calculate(litres, fat, snf):
+    if litres < 0 or not (2.0 <= fat <= 7.0) or snf < 0:
+        raise ValueError("Invalid milk data")
+
+    fs = round((fat - 3.5) / 0.1)
+    ss = round((snf - 8.5) / 0.1)
+
+    rate = round(30 + fs * 0.48 + ss * 0.30, 2)
+    return rate, round(litres * rate, 2)
+
+entries = [(10, 4.2, 8.7), (8, 3.5, 8.5), (12, 4.0, 8.6)]
+
+total = 0
+
+for litres, fat, snf in entries:
+    rate, amount = calculate(litres, fat, snf)
+    total += amount
+    print(f"Rate Rs {rate:.2f} | Payment Rs {amount:.2f}")
+
+print(f"Ten-day/sample total: Rs {total:.2f}")
